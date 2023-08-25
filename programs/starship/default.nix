@@ -1,5 +1,4 @@
-{}:
-{
+{}: {
   enable = true;
   enableZshIntegration = true;
   settings = {
@@ -11,7 +10,7 @@
     };
     directory = {
       truncation_length = 3;
-      style	 = "bold #268bd2";
+      style = "bold #268bd2";
     };
     status = {
       disabled = false;

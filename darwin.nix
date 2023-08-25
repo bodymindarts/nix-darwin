@@ -1,59 +1,57 @@
-{ pkgs, ... }:
+{pkgs, ...}: {
+  # Auto upgrade nix package and the daemon service.
+  services.nix-daemon.enable = true;
 
-{
-      # Auto upgrade nix package and the daemon service.
-      services.nix-daemon.enable = true;
+  # Necessary for using flakes on this system.
+  nix = {
+    settings.experimental-features = "nix-command flakes";
+    gc.automatic = true;
+    configureBuildUsers = true;
+  };
+  users.users.jcarter = {
+    home = "/Users/jcarter";
+    shell = pkgs.zsh;
+  };
 
-      # Necessary for using flakes on this system.
-      nix = {
-        settings.experimental-features = "nix-command flakes";
-        gc.automatic = true;
-        configureBuildUsers = true;
-      };
-      users.users.jcarter = {
-          home = "/Users/jcarter" ;
-          shell = pkgs.zsh;
-      };
+  # Create /etc/zshrc that loads the nix-darwin environment.
+  programs.zsh.enable = true;
+  programs.zsh.enableCompletion = false;
 
-      # Create /etc/zshrc that loads the nix-darwin environment.
-      programs.zsh.enable = true;
-      programs.zsh.enableCompletion = false;
+  fonts = {
+    fontDir.enable = true;
+    fonts = [
+      pkgs.hack-font
+    ];
+  };
 
-      fonts = {
-        fontDir.enable = true;
-        fonts = [
-          pkgs.hack-font
-        ];
-      };
+  system.keyboard.enableKeyMapping = true;
+  system.keyboard.remapCapsLockToControl = true;
+  system.defaults.trackpad.TrackpadThreeFingerDrag = true;
+  system.defaults.trackpad.Clicking = true;
+  system.defaults.NSGlobalDomain.AppleShowAllExtensions = true;
+  system.defaults.NSGlobalDomain.InitialKeyRepeat = 14;
+  system.defaults.NSGlobalDomain.KeyRepeat = 8;
 
-      system.keyboard.enableKeyMapping = true;
-      system.keyboard.remapCapsLockToControl = true;
-      system.defaults.trackpad.TrackpadThreeFingerDrag = true;
-      system.defaults.trackpad.Clicking = true;
-      system.defaults.NSGlobalDomain.AppleShowAllExtensions = true;
-      system.defaults.NSGlobalDomain.InitialKeyRepeat = 14;
-      system.defaults.NSGlobalDomain.KeyRepeat = 8;
+  # Used for backwards compatibility, please read the changelog before changing.
+  # $ darwin-rebuild changelog
+  system.stateVersion = 4;
 
-      # Used for backwards compatibility, please read the changelog before changing.
-      # $ darwin-rebuild changelog
-      system.stateVersion = 4;
+  # The platform the configuration will be used on.
+  nixpkgs.hostPlatform = "x86_64-darwin";
 
-      # The platform the configuration will be used on.
-      nixpkgs.hostPlatform = "x86_64-darwin";
-
-      environment.etc = {
-      "sudoers.d/10-nix-commands".text = let
-        commands = [
-          "/run/current-system/sw/bin/darwin-rebuild"
-          "/run/current-system/sw/bin/nix*"
-          "/nix/var/nix/profiles/default/bin/nix*"
-          "/run/current-system/sw/bin/ln"
-          "/nix/store/*/activate"
-          "/bin/launchctl"
-        ];
-        commandsString = builtins.concatStringsSep ", " commands;
-      in ''
-        %admin ALL=(ALL:ALL) NOPASSWD: ${commandsString}
-      '';
-      };
+  environment.etc = {
+    "sudoers.d/10-nix-commands".text = let
+      commands = [
+        "/run/current-system/sw/bin/darwin-rebuild"
+        "/run/current-system/sw/bin/nix*"
+        "/nix/var/nix/profiles/default/bin/nix*"
+        "/run/current-system/sw/bin/ln"
+        "/nix/store/*/activate"
+        "/bin/launchctl"
+      ];
+      commandsString = builtins.concatStringsSep ", " commands;
+    in ''
+      %admin ALL=(ALL:ALL) NOPASSWD: ${commandsString}
+    '';
+  };
 }

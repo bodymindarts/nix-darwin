@@ -1,6 +1,4 @@
-{ pkgs }:
-
-let
+{pkgs}: let
   pkgsUnstable = import <nixpkgs-unstable> {};
 in {
   enable = true;
@@ -8,12 +6,14 @@ in {
   vimAlias = true;
   # package = pkgs.neovim;
   plugins = with pkgs.vimPlugins; [
-    { plugin = copilot-vim;
+    {
+      plugin = copilot-vim;
       config = "
         let g:copilot_node_command = \"~/.nodenv/versions/16.19.1/bin/node\"
       ";
     }
-    { plugin = ale;
+    {
+      plugin = ale;
       config = "
         let g:ale_completion_enabled = 1
         let g:ale_completion_autoimport = 1
@@ -83,5 +83,5 @@ in {
       ";
     }
   ];
-  extraConfig = (builtins.readFile ./extra.vim);
+  extraConfig = builtins.readFile ./extra.vim;
 }
