@@ -2,9 +2,7 @@
   config,
   pkgs,
   ...
-}: let
-  pkgsUnstable = import <nixpkgs-unstable> {};
-in {
+}: {
   home-manager = {
     useUserPackages = false;
     useGlobalPkgs = true;
@@ -16,6 +14,7 @@ in {
         pkgs.silver-searcher
         pkgs.karabiner-elements
         pkgs.alejandra
+        pkgs.tree
         #        pkgs.httrack
         #
         #        pkgs.cmake

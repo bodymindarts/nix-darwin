@@ -51,10 +51,10 @@ augroup vimrc
 augroup end
 
 nnoremap <leader>r :ALERename<cr>
-nnoremap <leader>ev :tabe ~/.config/nixpkgs/programs/neovim/default.nix<cr>
-nnoremap <leader>eh :tabe ~/.config/nixpkgs/darwin-home.nix<cr>
+nnoremap <leader>ev :tabe ~/.config/nix-darwin/programs/neovim/default.nix<cr>
+nnoremap <leader>eh :tabe ~/.config/nix-darwin/home-manager.nix<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
-nnoremap <leader>ez :tabe ~/.config/nixpkgs/programs/zsh/default.nix<cr>
+nnoremap <leader>ez :tabe ~/.config/nix-darwin/programs/zsh/default.nix<cr>
 
 nnoremap <leader>x :w<cr>:!chmod +x %<cr>:edit!<cr>
 nnoremap <leader>m :!mkdir -p %:p:h<cr>

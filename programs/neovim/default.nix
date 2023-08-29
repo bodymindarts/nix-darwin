@@ -1,10 +1,7 @@
-{pkgs}: let
-  pkgsUnstable = import <nixpkgs-unstable> {};
-in {
+{pkgs}: {
   enable = true;
   viAlias = true;
   vimAlias = true;
-  # package = pkgs.neovim;
   plugins = with pkgs.vimPlugins; [
     {
       plugin = copilot-vim;

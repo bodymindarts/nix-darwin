@@ -12,8 +12,6 @@
     fi
 
     function p() { cd $(find ~/projects -maxdepth 3 -type d | sk) }
-
-    export PATH="''${PATH}:/Users/jcarter/.cargo/bin/"
   '';
 
   shellAliases = {
@@ -27,7 +25,8 @@
     sz = "source ~/.zshrc";
     eh = "vi ~/.config/nix-darwin/home.nix";
     ev = "vi ~/.config/nix-darwin/programs/neovim/default.nix";
+    tf = "terraform";
 
-    nix-update = "sudo -H nix-channel --update; source ~/.zshrc; nix-channel --update; darwin-rebuild switch --flake ~/.config/nix-darwin; source ~/.zshrc";
+    nix-update = "cd ~/.config/nix-darwin; nix flake update; darwin-rebuild switch --flake ~/.config/nix-darwin; source ~/.zshrc";
   };
 }
