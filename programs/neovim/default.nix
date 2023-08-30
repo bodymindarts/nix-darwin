@@ -6,7 +6,7 @@
     {
       plugin = copilot-vim;
       config = "
-        let g:copilot_node_command = \"~/.nodenv/versions/16.19.1/bin/node\"
+        let g:copilot_node_command = \"${pkgs.nodejs_18}/bin/node\"
       ";
     }
     {

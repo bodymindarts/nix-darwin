@@ -15,6 +15,12 @@
         pkgs.karabiner-elements
         pkgs.alejandra
         pkgs.tree
+
+        # for copilot to work in vim
+        pkgs.nodejs_18
+        # for docker pull
+        pkgs.google-cloud-sdk
+
         #        pkgs.httrack
         #
         #        pkgs.cmake

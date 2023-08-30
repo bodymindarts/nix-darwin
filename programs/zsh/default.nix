@@ -27,6 +27,6 @@
     ev = "vi ~/.config/nix-darwin/programs/neovim/default.nix";
     tf = "terraform";
 
-    nix-update = "cd ~/.config/nix-darwin; nix flake update; darwin-rebuild switch --flake ~/.config/nix-darwin; source ~/.zshrc";
+    nix-update = "pushd ~/.config/nix-darwin; nix flake update; darwin-rebuild switch --flake ~/.config/nix-darwin; source ~/.zshrc; popd";
   };
 }
