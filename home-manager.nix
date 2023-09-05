@@ -21,6 +21,8 @@
         # for docker pull
         pkgs.google-cloud-sdk
 
+        pkgs.fly91
+
         #        pkgs.httrack
         #
         #        pkgs.cmake
@@ -42,7 +44,6 @@
         #        pkgs.watchman
         #        pkgs.wget
         #        pkgs.tree
-        #        pkgs.fly91
         #        pkgs.mongodb-tools
         #        pkgs.postgresql
         #        pkgs.gnugrep
