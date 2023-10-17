@@ -4,7 +4,7 @@
 
   # Necessary for using flakes on this system.
   nix = {
-    settings.experimental-features = "nix-command flakes";
+    settings.experimental-features = "nix-command flakes impure-derivations ca-derivations";
     gc.automatic = true;
     configureBuildUsers = true;
   };

@@ -12,6 +12,7 @@
     fi
 
     function p() { cd $(find ~/projects -maxdepth 3 -type d | sk) }
+    ulimit -Sn 10240
   '';
 
   shellAliases = {

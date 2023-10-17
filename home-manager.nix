@@ -22,48 +22,6 @@
         pkgs.google-cloud-sdk
 
         pkgs.fly91
-
-        #        pkgs.httrack
-        #
-        #        pkgs.cmake
-        #        pkgs.gnupg
-        #
-        #        pkgs.gh
-        #        pkgs.sshuttle
-        #        pkgs.nix-prefetch
-        #        pkgs.grpcurl
-        #        pkgs.bats
-        #        pkgs.jq
-        #        pkgs.yq-go
-        #        pkgs.ytt
-        #        pkgs.vendir
-        #        pkgs.ipcalc
-        #        pkgs.htop
-        #        pkgs.openssh
-        #        pkgs.watch
-        #        pkgs.watchman
-        #        pkgs.wget
-        #        pkgs.tree
-        #        pkgs.mongodb-tools
-        #        pkgs.postgresql
-        #        pkgs.gnugrep
-        #        pkgs.uutils-coreutils
-        #        pkgsUnstable.lnd
-        #
-        #        pkgs.nodePackages.typescript-language-server
-        #        pkgs.nodePackages.diagnostic-languageserver
-        #        pkgs.nodePackages.eslint_d
-        #
-        #        pkgsUnstable.rustup
-        #        pkgsUnstable.sqlx-cli
-        #        pkgsUnstable.rust-analyzer
-        #        pkgsUnstable.terraform
-        #        pkgs.envsubst
-        #
-        #        pkgs.kubectl
-        #        pkgs.kubernetes-helm
-        #
-        # pkgs.google-cloud-sdk
       ];
       programs.git = {
         enable = true;
