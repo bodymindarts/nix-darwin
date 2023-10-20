@@ -43,7 +43,6 @@ let maplocalleader=","
 augroup vimrc
   autocmd!
   autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
-  autocmd FileType typescript autocmd BufWritePre <buffer> :ALEFix
   autocmd BufReadPost *
         \ if line("'\"") > 0 && line("'\"") <= line("$") |
         \ exe "normal g`\"" |
@@ -118,3 +117,21 @@ function! RenameFile()
   endif
 endfunction
 map <leader>N :call RenameFile()<cr>
+
+augroup TypeScriptOverrides
+    autocmd!
+    autocmd BufRead,BufNewFile *.ts,*.tsx,*.js,*.json call s:DefineEslintFunction()
+augroup END
+
+function! s:DefineEslintFunction()
+  function! ale#handlers#eslint#GetCwd(buffer) abort
+      " Obtain the path to the ESLint configuration
+      let l:config_path = ale#handlers#eslint#FindConfig(a:buffer)
+
+      " Extract the directory from the config path
+      let l:config_dir = fnamemodify(l:config_path, ':h')
+
+      " Return the directory as the cwd
+      return l:config_dir
+  endfunction
+endfunction
