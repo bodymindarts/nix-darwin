@@ -16,6 +16,8 @@
         pkgs.alejandra
         pkgs.tree
 
+        pkgs.jq
+
         # for copilot to work in vim
         pkgs.nodejs_18
         # for docker pull
