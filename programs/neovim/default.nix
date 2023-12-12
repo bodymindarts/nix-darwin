@@ -14,7 +14,7 @@
       config = "
         let g:ale_completion_enabled = 1
         let g:ale_completion_autoimport = 1
-        let g:ale_linters = {'javascript': [], 'typescript': ['tsserver', 'eslint'], 'typescript.tsx': ['tsserver', 'eslint'], 'rust': ['analyzer'] }
+        let g:ale_linters = {'javascript': [], 'typescript': ['tsserver', 'eslint'], 'typescriptreact': ['tsserver', 'eslint'], 'rust': ['analyzer'] }
         let g:ale_fixers = {'javascript': [], 'typescript': ['eslint'], 'typescript.tsx': ['eslint'], 'rust': ['rustfmt'] }
         let g:ale_lint_on_text_changed = 'normal'
         let g:ale_lint_on_insert_leave = 1
@@ -57,6 +57,7 @@
     typescript-vim
     vim-cool
     vim-jsx-pretty
+    vimproc-vim
     {
       plugin = tsuquyomi;
       config = "
