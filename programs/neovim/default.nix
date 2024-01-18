@@ -26,6 +26,7 @@
         let g:ale_fix_on_save = 1
 
         nnoremap <silent> gd :ALEGoToDefinition<enter>
+        nnoremap <silent> gr :ALEFindReferences -quickfix<enter>
       ";
     }
     {
