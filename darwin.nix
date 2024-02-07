@@ -31,6 +31,8 @@
   system.defaults.NSGlobalDomain.AppleShowAllExtensions = true;
   system.defaults.NSGlobalDomain.InitialKeyRepeat = 15;
   system.defaults.NSGlobalDomain.KeyRepeat = 2;
+  system.defaults.screensaver.askForPassword = true;
+  system.defaults.screensaver.askForPasswordDelay = 0;
   system.defaults.dock.wvous-tl-corner = 13;
 
   # Used for backwards compatibility, please read the changelog before changing.

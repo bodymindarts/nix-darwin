@@ -27,6 +27,7 @@
 
         nnoremap <silent> gd :ALEGoToDefinition<enter>
         nnoremap <silent> gr :ALEFindReferences -quickfix<enter>
+        nnoremap <leader>r :ALERename<cr>
       ";
     }
     {
