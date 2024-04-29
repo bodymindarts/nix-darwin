@@ -11,7 +11,7 @@ self: super: let
         sha256 = sha256Arg;
       };
 
-      vendorSha256 = vendorSha256Arg;
+      vendorHash = vendorSha256Arg;
 
       doCheck = false;
 
