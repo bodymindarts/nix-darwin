@@ -21,7 +21,11 @@
         # for copilot to work in vim
         pkgs.nodejs_18
         # for docker pull
-        pkgs.google-cloud-sdk
+        # pkgs.docker-credential-gcr
+        (pkgs.google-cloud-sdk.withExtraComponents [
+          pkgs.google-cloud-sdk.components.docker-credential-gcr
+        ])
+
 
         pkgs.fly91
       ];

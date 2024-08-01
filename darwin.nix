@@ -17,13 +17,6 @@
   programs.zsh.enable = true;
   programs.zsh.enableCompletion = false;
 
-  fonts = {
-    fontDir.enable = true;
-    fonts = [
-      pkgs.hack-font
-    ];
-  };
-
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToControl = true;
   system.defaults.trackpad.TrackpadThreeFingerDrag = true;

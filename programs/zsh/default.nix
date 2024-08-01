@@ -26,9 +26,9 @@
     sz = "source ~/.zshrc";
     eh = "vi ~/.config/nix-darwin/home.nix";
     ev = "vi ~/.config/nix-darwin/programs/neovim/default.nix";
-    tf = "terraform";
+    tf = "tofu";
     k = "kubectl";
 
-    nix-update = "pushd ~/.config/nix-darwin; nix flake update; darwin-rebuild switch --flake ~/.config/nix-darwin; source ~/.zshrc; popd";
+    nix-update = "pushd ~/.config/nix-darwin; nix flake update --impure; darwin-rebuild switch --flake ~/.config/nix-darwin --impure; source ~/.zshrc; popd";
   };
 }
