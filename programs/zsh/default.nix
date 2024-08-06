@@ -29,6 +29,6 @@
     tf = "tofu";
     k = "kubectl";
 
-    nix-update = "pushd ~/.config/nix-darwin; nix flake update --impure; darwin-rebuild switch --flake ~/.config/nix-darwin --impure; source ~/.zshrc; popd";
+    nix-update = "export NIXPKGS_ALLOW_UNFREE=1; pushd ~/.config/nix-darwin; nix flake update --impure; darwin-rebuild switch --flake ~/.config/nix-darwin --impure; source ~/.zshrc; popd";
   };
 }
