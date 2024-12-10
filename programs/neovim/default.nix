@@ -66,6 +66,7 @@
         let g:tsuquyomi_disable_quickfix = 1
       ";
     }
+    nvim-bacon
     {
       plugin = rust-vim;
       config = "

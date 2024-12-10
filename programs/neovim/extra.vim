@@ -53,6 +53,8 @@ nnoremap <leader>ev :tabe ~/.config/nix-darwin/programs/neovim/default.nix<cr>
 nnoremap <leader>eh :tabe ~/.config/nix-darwin/home-manager.nix<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>ez :tabe ~/.config/nix-darwin/programs/zsh/default.nix<cr>
+nnoremap <leader>b :BaconLoad<cr>
+nnoremap <leader>s :BaconLoad<cr>:BaconShow<cr>
 
 nnoremap <leader>x :w<cr>:!chmod +x %<cr>:edit!<cr>
 nnoremap <leader>m :!mkdir -p %:p:h<cr>
