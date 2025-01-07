@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+  ids.gids.nixbld = 350;
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
 
@@ -33,7 +34,7 @@
   system.stateVersion = 4;
 
   # The platform the configuration will be used on.
-  nixpkgs.hostPlatform = "x86_64-darwin";
+  nixpkgs.hostPlatform = "aarch64-darwin";
 
   environment.etc = {
     "sudoers.d/10-nix-commands".text = let
