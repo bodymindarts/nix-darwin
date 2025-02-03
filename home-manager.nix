@@ -28,6 +28,8 @@
 
 
         pkgs.fly91
+
+        pkgs.gnupg
       ];
       programs.git = {
         enable = true;
