@@ -5,7 +5,7 @@
   sessionVariables.BASTION_USER = "justin_galoy_io";
   sessionVariables.CARGO_NET_GIT_FETCH_WITH_CLI = "true";
 
-  initExtra = ''
+  initContent = ''
     export XDG_CONFIG_HOME="/Users/''${USER}/.config"
     if [ -e "$HOME/.nix-defexpr/channels" ]; then
       export NIX_PATH="$HOME/.nix-defexpr/channels''${NIX_PATH:+:$NIX_PATH}"

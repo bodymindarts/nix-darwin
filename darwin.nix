@@ -1,13 +1,11 @@
 {pkgs, ...}: {
   ids.gids.nixbld = 350;
-  # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
 
   # Necessary for using flakes on this system.
   nix = {
+    enable = true;
     settings.experimental-features = "nix-command flakes impure-derivations ca-derivations";
     gc.automatic = true;
-    configureBuildUsers = true;
   };
   users.users.jcarter = {
     home = "/Users/jcarter";
