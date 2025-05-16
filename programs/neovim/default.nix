@@ -4,12 +4,6 @@
   vimAlias = true;
   plugins = with pkgs.vimPlugins; [
     {
-      plugin = copilot-vim;
-      config = "
-        let g:copilot_node_command = \"${pkgs.nodejs_18}/bin/node\"
-      ";
-    }
-    {
       plugin = ale;
       config = "
         let g:ale_completion_enabled = 1
@@ -46,6 +40,7 @@
         let g:ackprg = 'ag --nogroup --nocolor --column'
       ";
     }
+    copilot-vim
     bats-vim
     vim-commentary
     vim-surround
