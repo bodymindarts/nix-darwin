@@ -16,6 +16,7 @@
   programs.zsh.enable = true;
   programs.zsh.enableCompletion = false;
 
+  system.primaryUser = "jcarter";
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToControl = true;
   system.defaults.trackpad.TrackpadThreeFingerDrag = true;

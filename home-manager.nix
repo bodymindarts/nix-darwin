@@ -17,6 +17,7 @@
         pkgs.tree
 
         pkgs.ffmpeg
+        pkgs.yt-dlp
 
         pkgs.jq
 
