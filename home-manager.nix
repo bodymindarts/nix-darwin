@@ -16,6 +16,8 @@
         pkgs.alejandra
         pkgs.tree
 
+        pkgs.claude-code
+
         pkgs.ffmpeg
         pkgs.yt-dlp
 
