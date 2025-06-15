@@ -16,12 +16,20 @@
         pkgs.alejandra
         pkgs.tree
 
-        pkgs.claude-code
+        (pkgs.claude-code.overrideAttrs (oldAttrs: rec {
+          version = "1.0.11";
+          src = pkgs.fetchzip {
+            url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-${version}.tgz";
+            hash = "sha256-IXNBNjt4Sh5pR+Cz2uEZcCop9reAmQ7hObohtN0f3Ww=";
+          };
+          npmDepsHash = "";
+        }))
 
         pkgs.ffmpeg
         pkgs.yt-dlp
 
         pkgs.jq
+        pkgs.ripgrep
 
         # for docker pull
         # pkgs.docker-credential-gcr
