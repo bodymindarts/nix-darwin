@@ -17,10 +17,10 @@
         pkgs.tree
 
         (pkgs.claude-code.overrideAttrs (oldAttrs: rec {
-          version = "1.0.24";
+          version = "1.0.31";
           src = pkgs.fetchzip {
             url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-${version}.tgz";
-            hash = "sha256-12nmnVM0/+rhWrkIQXttASKPZgGQMvrzWF/JDwR7If4=";
+            hash = "sha256-DrjR1LHnLXk2cW3zXO1jxc3octITMq6t28E2KJHBxZE=";
           };
           npmDepsHash = "";
         }))
