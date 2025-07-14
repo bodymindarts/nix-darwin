@@ -6,13 +6,13 @@
     {
       plugin = ale;
       config = "
-        let g:ale_completion_enabled = 1
-        let g:ale_completion_autoimport = 1
+        let g:ale_completion_enabled = 0
+        let g:ale_completion_autoimport = 0
         let g:ale_linters = {'javascript': [], 'typescript': ['tsserver', 'eslint'], 'typescriptreact': ['tsserver', 'eslint'], 'rust': ['analyzer'] }
         let g:ale_fixers = {'javascript': [], 'typescript': ['eslint'], 'typescript.tsx': ['eslint'], 'rust': ['rustfmt'] }
         let g:ale_lint_on_text_changed = 'normal'
         let g:ale_lint_on_insert_leave = 1
-        let g:ale_lint_delay = 0
+        let g:ale_lint_delay = 200
         let g:ale_set_quickfix = 0
         let g:ale_set_loclist = 0
         let g:ale_javascript_eslint_options = '--cache'
