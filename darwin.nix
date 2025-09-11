@@ -4,7 +4,10 @@
   # Necessary for using flakes on this system.
   nix = {
     enable = true;
-    settings.experimental-features = "nix-command flakes impure-derivations ca-derivations";
+    settings = {
+      experimental-features = "nix-command flakes impure-derivations ca-derivations";
+      trusted-users = [ "root" "jcarter" "@admin" ];
+    };
     gc.automatic = true;
   };
   users.users.jcarter = {
