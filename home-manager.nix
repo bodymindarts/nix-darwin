@@ -74,8 +74,13 @@
       };
       programs.ssh = {
         enable = true;
-        compression = true;
-        forwardAgent = false;
+        enableDefaultConfig = false;
+        matchBlocks = {
+          "*" = {
+            compression = true;
+            forwardAgent = false;
+          };
+        };
       };
       programs.starship = import ./programs/starship/default.nix {};
       programs.skim = {
