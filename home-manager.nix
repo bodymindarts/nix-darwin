@@ -16,14 +16,7 @@
         pkgs.alejandra
         pkgs.tree
 
-        (pkgs.claude-code.overrideAttrs (oldAttrs: rec {
-          version = "1.0.120";
-          src = pkgs.fetchzip {
-            url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-${version}.tgz";
-            hash = "sha256-bdARSCZzoMmo/FOAYs20Kz6pR7cM+TyJ+MTbKWBpuGs=";
-          };
-          npmDepsHash = "";
-        }))
+        pkgs.claude-code
 
         pkgs.ffmpeg
         pkgs.yt-dlp
