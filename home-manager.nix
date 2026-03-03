@@ -19,7 +19,6 @@
         pkgs.claude-code
 
         pkgs.ffmpeg
-        pkgs.yt-dlp
 
         pkgs.jq
         pkgs.ripgrep
@@ -55,7 +54,10 @@
             amend = "commit --amend";
           };
         };
-        ignores = ["*~"];
+        ignores = [
+          "*~"
+          ".claude/"
+        ];
         lfs.enable = true;
       };
       programs.direnv = {

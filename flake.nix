@@ -7,6 +7,8 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    claude-code.url = "github:sadjow/claude-code-nix";
+    claude-code.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs @ {
@@ -14,6 +16,7 @@
     nix-darwin,
     nixpkgs,
     home-manager,
+    claude-code,
   }: {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#simple
@@ -22,6 +25,7 @@
         {
           nixpkgs.overlays = [
             (import ./overlays/fly-versions.nix)
+            claude-code.overlays.default
           ];
         }
         ./darwin.nix
