@@ -32,6 +32,7 @@
 
         pkgs.fly91
 
+        pkgs.gh
         pkgs.gnupg
       ];
       programs.git = {
