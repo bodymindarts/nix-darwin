@@ -37,9 +37,11 @@
       ];
       programs.git = {
         enable = true;
-        userName = "bodymindarts";
-        userEmail = "justin@galoy.io";
-        extraConfig = {
+        settings = {
+          user = {
+            name = "bodymindarts";
+            email = "justin@galoy.io";
+          };
           init = {defaultBranch = "main";};
           core = {editor = "vim";};
           "url \"ssh://git@github.com:\"" = {insteadOf = "https://github.com";};
