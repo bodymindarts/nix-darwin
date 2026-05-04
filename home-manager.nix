@@ -69,6 +69,14 @@
         nix-direnv = {
           enable = true;
         };
+       config = {
+        whitelist = {
+          prefix = [
+            "/Users/jcarter/projects/galoymoney"
+            "/Users/jcarter/projects/bodymindarts"
+        ];
+      };
+    };
       };
       programs.ssh = {
         enable = true;
