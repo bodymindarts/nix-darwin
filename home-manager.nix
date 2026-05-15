@@ -17,6 +17,7 @@
         pkgs.tree
 
         pkgs.claude-code
+        pkgs.codex
 
         pkgs.ffmpeg
 
