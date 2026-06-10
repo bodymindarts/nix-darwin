@@ -30,7 +30,7 @@
     {
       plugin = ctrlp-vim;
       config = "
-        let g:ctrlp_user_command = 'ag %s -l -f --nocolor -g \"\"'
+        let g:ctrlp_user_command = 'rg %s --files --color=never --glob \"\"'
         let g:ctrlp_show_hidden = 0
         let g:ctrlp_use_caching = 0
         let g:ctrlp_switch_buffer = 'e'
@@ -40,7 +40,7 @@
     {
       plugin = ack-vim;
       config = "
-        let g:ackprg = 'ag --nogroup --nocolor --column'
+        let g:ackprg = 'rg --vimgrep --no-heading'
       ";
     }
     bats-vim

@@ -11,7 +11,6 @@
       home.username = "jcarter";
       home.homeDirectory = "/Users/jcarter";
       home.packages = [
-        pkgs.silver-searcher
         pkgs.karabiner-elements
         pkgs.alejandra
         pkgs.tree
